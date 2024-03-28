@@ -1,0 +1,116 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Align elements to the right */
+    align-items: center;
+    background: linear-gradient(to right top, #ff9472, #f2709c);
+    /* background-color: #474554; */
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .logo-container {
+    flex: 1;
+  }
+  
+  .logo {
+    max-width: 150px; /* Set maximum width for the logo */
+    height: 50px; /* Allow height to adjust proportionally */
+  }
+  
+  .logo-text {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+  }
+  
+  .links-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    z-index: 1;
+  }
+  
+  .nav-link {
+    margin-bottom: 1rem;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hamburger-icon {
+    display: none;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  .change.bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .change.bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .change.bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: space-between; /* Align elements to both ends */
+      background: linear-gradient(to right , #ff9472, #f2709c); 
+    }
+  
+    .hamburger-icon {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .links-container {
+      display: flex;
+      width: 200px;
+      background: linear-gradient(to right top, #ff9472, #f2709c); 
+      /* background-color: rgba(255, 148, 114, 1); */
+    }
+  
+    .links-container.show {
+      transform: translateX(0);
+    }
+  
+    body {
+      overflow-x: hidden; /* Prevent horizontal scrolling on small screens */
+    }
+  }
+  
+  /* For screens larger than 768px */
+  @media (min-width: 769px) {
+    .hamburger-icon {
+      display: none; /* Hide hamburger icon */
+    }
+  
+    .links-container {
+      display: flex; /* Display links */
+      flex-direction: row; /* Display links in row */
+      position: static; /* Reset position */
+      background-color: transparent; /* Reset background color */
+      padding: 0; /* Reset padding */
+      transform: none; /* Reset transform */
+      z-index: auto;
+    }
+  
+    .nav-link {
+      margin-left: 1rem; /* Add spacing between links */
+      margin-bottom: 0; /* Remove bottom margin */
+    }
+  }

@@ -1,13 +1,97 @@
+/* Import the Quicksand font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Quicksand', sans-serif; /* Apply Quicksand font to the entire document */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.main_div{
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: rgba(255, 148, 114, 0.1);
+}
+
+
+/* ~download section */
+.download-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 40vh;
+  background-color: rgba(255, 148, 114, 0.1); /* Background color with .5 opacity */
+  transition: transform 0.5s ease; /* Animation on transform */
+}
+
+.download-text {
+  color: black; /* Set text color to white */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: 500;
+  margin-bottom: 1rem; /* Add margin to separate from buttons */
+  text-align: center; /* Center text */
+}
+
+.button-container {
+  display: flex;
+}
+
+.app-button {
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.5s ease; /* Animation on transform */
+}
+
+.android {
+  background-color: #4CAF50; /* Green background color for Android button */
+  color: white; /* Text color for Android button */
+}
+
+.ios {
+  background-color: #2196F3; /* Blue background color for iOS button */
+  color: white; /* Text color for iOS button */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .download-container {
+    height: auto; /* Auto height for small screens */
+    padding: 2rem; /* Add padding for better spacing */
+  }
+
+  .button-container {
+    flex-direction: column; /* Arrange buttons in a column for small screens */
+  }
+
+  .download-text {
+    font-size: 1.2rem; /* Adjust font size for small screens */
+  }
+}
+
+
+/*~ Media query for scroll bar */
+@media (min-width: 769px) {
+  /* Webkit scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 148, 114, 0.1); /* Background color of the scrollbar track */
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right top, #ff9472, #f2709c);
+    border-radius: 5px; 
+  }
 }

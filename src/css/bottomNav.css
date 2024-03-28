@@ -1,0 +1,22 @@
+
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to right top, #ff9472, #f2709c); */
+    background-color: #ff9472;
+    padding: 1rem;
+}
+ 
+
+.bottom-nav span {
+    color: white; 
+    cursor: pointer;
+}
+
+.separator {
+    margin: 0 1rem;
+    color: white;
+    opacity: .5;
+}
+  
