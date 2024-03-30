@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import splashLogo from './assets/icon/splash_logo.png';
-import Carousel from './components/carausel';
-import NavBar from './components/navbar';
-import BottomNav from './components/bottomNav';
+
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App';
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -14,19 +14,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <div class="main_div">
-      <NavBar />
-      <Carousel />
-
-      {/* //~download section */}
-      <div class="download-container">
-        <p class="download-text">Download Quizzers Mobile Application</p>
-        <div class="button-container">
-          <button class="app-button android">Android App</button>
-          <button class="app-button ios">IOS App</button>
-        </div>
-      </div>
-
-     <BottomNav />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </div>
   </>
 );

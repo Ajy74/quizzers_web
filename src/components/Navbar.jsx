@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import splashLogo from '../assets/icon/splash_logo.png';
-import '../css/navbar.css';
+import '../css/navbar.css'; 
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -18,8 +19,8 @@ const NavBar = () => {
           <span className="logo-text">Quizzers</span>
         </div>
         <div className={`links-container ${showLinks ? 'show' : ''}`}>
-          <a href="#" className="nav-link">About Us</a>
-          <a href="#" className="nav-link">Support</a>
+          <NavLink exact className={(navData) => navData.isActive ? 'nav-link-active' : 'nav-link'}  to="/about" >About Us</NavLink>
+          <NavLink exact className={(navData) => navData.isActive ? 'nav-link-active' : 'nav-link'}  to="/support" >Support</NavLink>
         </div>
         <div className="hamburger-icon" onClick={toggleLinks}>
           <div className={`bar ${showLinks ? 'change' : ''}`}></div>
