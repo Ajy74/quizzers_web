@@ -37,10 +37,10 @@ const LoginForm = () => {
         placeholder="Enter Username"
       />
       <input
-        type=" Enter Password"
+        type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        placeholder="Enter Password"
       />
       <button type="submit">Login</button>
     </form>
