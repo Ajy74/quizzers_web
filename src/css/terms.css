@@ -1,0 +1,44 @@
+/* Privacy.css */
+
+.terms-container {
+    width: 80%;
+    margin: 50px auto 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.terms-title {
+    text-align: center;
+    color: #333;
+}
+
+.terms-content {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.terms-content h2 {
+    margin-top: 20px;
+}
+
+.terms-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.terms-content ul li {
+    margin-bottom: 10px;
+}
+
+.terms-content ul li span{
+    color: #333;
+    font-weight: 600;
+}
+
+.companyEmail{
+    color: #2027e1;
+    font-weight: 400;
+}

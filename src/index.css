@@ -16,6 +16,11 @@ body {
   background-color: rgba(255, 148, 114, 0.1);
 }
 
+/* ~custom selection color */
+::selection {
+  background-color: #ff9472; /* Adjust the color code to your preference */
+  color: #fff; /* Adjust the text color for selected text */
+}
 
 /* ~download section */
 .download-container {
