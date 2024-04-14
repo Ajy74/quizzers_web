@@ -101,3 +101,83 @@
     max-height: 1000px; /* Adjust height based on content */
   }
   
+/* ~Feedback form styles */
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feedback-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .feedback-form label {
+    font-weight: bold;
+  }
+  
+  .feedback-form input,
+  .feedback-form textarea {
+    width: calc(100% - 20px); /* Adjust width to leave space for padding */
+    padding: 8px; /* Increase padding for input fields */
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Increase margin bottom for input fields */
+    transition: border-color 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+  .feedback-form input:focus,
+  .feedback-form textarea:focus {
+    border-color: #ff9472;
+    outline: none; /* Remove default outline on focus */
+  }
+  
+  .feedback-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  .feedback-form button {
+    padding: 14px 20px; /* Increase padding for button */
+    background-color:  #f2709c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: medium;
+    letter-spacing: .2ch;
+    margin-top: 20px;
+  }
+  
+  .feedback-form button:hover {
+    background-color:  #ff9472;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    .feedback-form .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .feedback-form input,
+    .feedback-form textarea {
+      padding: 15px 8px; /* Adjust padding for smaller screens */
+      width: calc(100% - 16px); /* Adjust width for smaller screens */
+      margin-top: 5px;
+    }
+  
+    .feedback-form button {
+      padding: 15px 16px; /* Adjust padding for smaller screens */
+      font-size: medium;
+      letter-spacing: .1ch;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Media query for screens larger than 600px */
+  @media only screen and (min-width: 601px) {
+    .feedback-form button {
+      align-self: flex-end; /* Align button to end of container for larger screens */
+    }
+  }
+  

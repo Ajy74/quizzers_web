@@ -38,8 +38,8 @@ const Support = () => {
                         <h2>Contact Us</h2>
                         <p>If you have any questions or need assistance, feel free to reach out to us:</p>
                         <ul>
-                            <li>Email: <span>support@quizzersapp.com</span></li>
-                            <li>Phone: +1234567890</li>
+                            <li>Email: <span>quizzers14@gmail.com</span></li>
+                            <li>Phone: +123456789</li>
                         </ul>
                     </section>
                     <section className="faq">
@@ -61,7 +61,21 @@ const Support = () => {
                     <section className="feedback-form">
                         <h2>Feedback</h2>
                         <p>Submit your feedback or report issues using the form below:</p>
-                        {/* Add feedback form component here */}
+                        <form>
+                            <div className="form-group">
+                                <label htmlFor="name">Name:</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">Email:</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="message">Message:</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit">Submit</button>
+                        </form>
                     </section>
                 </div>
             </div>
