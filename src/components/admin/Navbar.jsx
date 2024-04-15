@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import profileImage from '../../assets/team/ajay.jpg'; 
-import notificationIcon from '../../assets/icon/notif.png'; 
+// import notificationIcon from '../../assets/icon/notif.png'; 
 import '../../css/admin/navbar.css';
 
 const NavBar = () => {
@@ -12,7 +12,7 @@ const NavBar = () => {
             </div>
             <div className="user-profile">
                 <img src={profileImage} alt="Profile" className="profile-image" />
-                <img src={notificationIcon} alt="Notifications" className="notification-icon" />
+                {/* <img src={notificationIcon} alt="Notifications" className="notification-icon" /> */}
             </div>
         </nav>
     );
