@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory, useNavigate } from 'react-router-dom';
+import '../../css/admin/login.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -29,21 +30,26 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Enter Username"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter Password"
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="login-container">
+      <form onSubmit={handleLogin} className="login-form">
+        <h2 className="login-title">Admin Login</h2>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter Username"
+          className="input-field"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter Password"
+          className="input-field"
+        />
+        <button type="submit" className="login-button">Login</button>
+      </form>
+    </div>
   );
 };
 

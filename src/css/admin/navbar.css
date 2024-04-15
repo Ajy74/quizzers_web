@@ -1,0 +1,51 @@
+/* navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right top, #ff9472, #f2709c);
+    /* background-color: #474554; */
+    padding: 12px 20px;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo-text {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set text color */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.notification-icon {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* CSS for hover effects */
+.user-profile:hover .profile-image {
+    transform: scale(1.1); /* Scale up profile image on hover */
+}
+
+.user-profile:hover .notification-icon {
+    transform: scale(1.1); /* Scale up notification icon on hover */
+}
