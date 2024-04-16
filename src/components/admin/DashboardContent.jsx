@@ -16,7 +16,7 @@ const DashboardContent = () => {
                 <div className="admin-dashboard-sidebar">
                     <ul>
                         <li className={activeMenu === 'Dashboard' ? 'active' : ''} onClick={() => handleMenuClick('Dashboard')}>Dashboard</li>
-                        <li className={activeMenu === 'Quizzes' ? 'active' : ''} onClick={() => handleMenuClick('Quiz')}>Quiz</li>
+                        <li className={activeMenu === 'Quiz' ? 'active' : ''} onClick={() => handleMenuClick('Quiz')}>Quiz</li>
                         <li className={activeMenu === 'Contests' ? 'active' : ''} onClick={() => handleMenuClick('Contests')}>Contests</li>
                         <li className={activeMenu === 'Subject Category' ? 'active' : ''} onClick={() => handleMenuClick('Subject Category')}>Subject Category</li>
                         <li className={activeMenu === 'Engage Category' ? 'active' : ''} onClick={() => handleMenuClick('Engage Category')}>Engage Category</li>

@@ -9,8 +9,7 @@
     width: 200px;
     height: calc(100vh - 65px);
     background-color: #f2709c;
-    padding-left: 10px;
-    padding-right: 5px;
+    padding-right: 10px;
   }
   
   .admin-dashboard-sidebar ul {
@@ -19,7 +18,7 @@
   }
   
   .admin-dashboard-sidebar li {
-    padding: 10px 0;
+    padding: 10px 10px;
     cursor: pointer;
     font-size: large;
     font-weight: 500;
@@ -33,7 +32,7 @@
     background-color: rgba(255, 255, 255, 0.065);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding-left: 10px;
+    padding-left: 20px;
   }
 
   .admin-dashboard-sidebar li:hover {
@@ -42,7 +41,7 @@
     background-color: rgba(255, 255, 255, 0.065);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding-left: 10px;
+    padding-left: 20px;
   }
   
   .admin-dashboard-content {
