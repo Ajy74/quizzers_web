@@ -42,7 +42,7 @@ const QuizMenu = () => {
 
     const fetchQuizData = async () => {
         try {
-            const response = await fetch("http://localhost:5000/api/all-quiz");
+            const response = await fetch("https://quizzers-api.onrender.com/api/all-quiz");
             const data = await response.json();
             setQuizData(data);
         } catch (error) {
