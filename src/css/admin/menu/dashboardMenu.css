@@ -1,5 +1,13 @@
 /* dashboardMenu.css */
 
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 65px); 
+}
+
+
 .dashboard-menu-container {
     /* display: flex; */
     /* flex-wrap: wrap;  */
@@ -8,6 +16,7 @@
     margin-bottom: 25px;
     margin-right: 25px;
 }
+
 
 .dashboard-menu-items {
     display: grid;
