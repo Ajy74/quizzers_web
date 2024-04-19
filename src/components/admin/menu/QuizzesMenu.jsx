@@ -3,6 +3,7 @@ import { styled, tableCellClasses, Button, Table, TableHead, TableBody, TableRow
 import { Add, Edit, Delete } from "@mui/icons-material";
 
 import AddQuizDialog from "../components/addQuizDialog";
+import UpdateQuizDialog from "../components/updateQuizDialog";
 
 import "../../../css/admin/menu/quizMenu.css";
 
@@ -35,7 +36,10 @@ const QuizMenu = () => {
     const [quizData, setQuizData] = useState([]);
     const [filter, setFilter] = useState(null); 
     const [openDialog, setOpenDialog] = useState(false); 
+    const [openUpdateDialog, setUpdateDialog] = useState(false); 
     const [deleting, setDeleting] = useState(false);
+
+    const [currentQuiz, setCurrentQuiz] = useState(null);
 
     useEffect(() => {
         fetchQuizData();
@@ -71,6 +75,12 @@ const QuizMenu = () => {
 
     const handleCloseDialog = () => {
         setOpenDialog(false);
+        fetchQuizData();
+    };
+
+    const handleUpdateCloseDialog = () => {
+        setUpdateDialog(false);
+        fetchQuizData();
     };
 
     const handleDeleteQuiz = async (quizId) => {
@@ -93,9 +103,17 @@ const QuizMenu = () => {
         }
     };
     
-    const handleEditQuiz = async (quizId) => {
-        console.log("editing..",quizId);
-        setOpenDialog(true);
+    const handleEditQuiz = async (quiz) => {
+        // console.log("editing..\n",quiz);
+        if(quiz.status === -1){
+            setCurrentQuiz(quiz);
+            setUpdateDialog(true);
+        }else{
+            quiz.status === 0 
+            ?alert("You can't modify this quiz as it is live now !")
+            :alert("You can't modify this quiz as it is completed !");
+            return;
+        }
     };
 
 
@@ -150,7 +168,7 @@ const QuizMenu = () => {
                                 <StyledTableCell>{quiz.level}</StyledTableCell>
                                 <StyledTableCell>{quiz.joinedUserDetail.length}</StyledTableCell>
                                 <StyledTableCell>
-                                <IconButton onClick={() => handleEditQuiz(quiz._id)}>
+                                <IconButton onClick={() => handleEditQuiz(quiz)}>
                                     <Edit className="action-icon editBtn"/>
                                 </IconButton>
                                     <IconButton onClick={() => handleDeleteQuiz(quiz._id)}>
@@ -173,6 +191,7 @@ const QuizMenu = () => {
             </div>
 
             <AddQuizDialog open={openDialog} handleClose={handleCloseDialog} />
+            <UpdateQuizDialog open={openUpdateDialog} handleClose={handleUpdateCloseDialog} quiz={currentQuiz} />
             <Dialog open={deleting}>
                 <DialogContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <CircularProgress style={{ color: '#ff9472' }} />

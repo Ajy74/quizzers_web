@@ -66,7 +66,7 @@ export default function AddQuizDialog({ open, handleClose }) {
 
     // Check if any field is empty
     if (!selectedSubject || !selectedLevel || !duration || !megaPrizeAmount || !startDate || !startTime || !file) {
-      alert('Please fill in all fields and choose a .json file.');
+      alert('Please fill all fields and choose a .json file.');
       return;
     }
 
@@ -115,7 +115,7 @@ export default function AddQuizDialog({ open, handleClose }) {
         throw new Error('Failed to create quiz');
       }
   
-      const data = await response.json();
+      // const data = await response.json();
       // console.log('Quiz created:', data);
       setSnackbarSeverity('success');
       setSnackbarMessage('Quiz created successfully');
@@ -142,7 +142,7 @@ export default function AddQuizDialog({ open, handleClose }) {
         const contents = e.target.result;
         const json = JSON.parse(contents);
 
-        console.log(json);
+        // console.log(json);
         setQuestions(json);
       };
       reader.readAsText(file);
