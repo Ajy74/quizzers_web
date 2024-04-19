@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { styled, tableCellClasses, Button, Table, TableHead, TableBody, TableRow, TableCell, TablePagination } from "@mui/material/";
+import { styled, tableCellClasses, Button, Table, TableHead, TableBody, TableRow, TableCell, TablePagination, IconButton, Dialog,DialogContent, CircularProgress } from "@mui/material/";
 import { Add, Edit, Delete } from "@mui/icons-material";
 
 import AddQuizDialog from "../components/addQuizDialog";
@@ -35,6 +35,7 @@ const QuizMenu = () => {
     const [quizData, setQuizData] = useState([]);
     const [filter, setFilter] = useState(null); 
     const [openDialog, setOpenDialog] = useState(false); 
+    const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
         fetchQuizData();
@@ -70,6 +71,31 @@ const QuizMenu = () => {
 
     const handleCloseDialog = () => {
         setOpenDialog(false);
+    };
+
+    const handleDeleteQuiz = async (quizId) => {
+        setDeleting(true); 
+        console.log("deleting..",quizId);
+        try {
+            const response = await fetch(`http://192.168.143.122:5000/api/delete-quiz/${quizId}`, {
+                method: "DELETE"
+            });
+            if (response.ok) {
+                fetchQuizData(); // Refresh quiz data after successful deletion
+            } else {
+                console.error("Failed to delete quiz");
+            }
+        } catch (error) {
+            console.error("Error deleting quiz:", error);
+        }
+        finally{
+            setDeleting(false);
+        }
+    };
+    
+    const handleEditQuiz = async (quizId) => {
+        console.log("editing..",quizId);
+        setOpenDialog(true);
     };
 
 
@@ -124,8 +150,12 @@ const QuizMenu = () => {
                                 <StyledTableCell>{quiz.level}</StyledTableCell>
                                 <StyledTableCell>{quiz.joinedUserDetail.length}</StyledTableCell>
                                 <StyledTableCell>
-                                    <Edit className="action-icon editBtn" />
-                                    <Delete className="action-icon delBtn" />
+                                <IconButton onClick={() => handleEditQuiz(quiz._id)}>
+                                    <Edit className="action-icon editBtn"/>
+                                </IconButton>
+                                    <IconButton onClick={() => handleDeleteQuiz(quiz._id)}>
+                                        <Delete className="action-icon delBtn"/>
+                                    </IconButton>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}
@@ -143,6 +173,12 @@ const QuizMenu = () => {
             </div>
 
             <AddQuizDialog open={openDialog} handleClose={handleCloseDialog} />
+            <Dialog open={deleting}>
+                <DialogContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <CircularProgress style={{ color: '#ff9472' }} />
+                    <p style={{ color: '#f2709c' }}>Deleting...</p>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }
