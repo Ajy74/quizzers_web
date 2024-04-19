@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CircularProgress from '@mui/material/CircularProgress';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import BASE_URL from "../server/endpoint";
 
 const subjects = [
   'Music',
@@ -103,7 +104,7 @@ export default function AddQuizDialog({ open, handleClose }) {
 
     try {
       setCreating(true);
-      const response = await fetch('http://localhost:5000/api/create-quiz', {
+      const response = await fetch(`${BASE_URL}api/create-quiz`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -11,6 +11,7 @@ import {
   Snackbar,
   Alert,
 } from "@mui/material";
+import BASE_URL from "../server/endpoint";
 
 const subjects = [
   "Music",
@@ -121,7 +122,7 @@ const UpdateQuizDialog = ({ open, handleClose, quiz }) => {
 
     try {
         setUpdating(true);
-        const response = await fetch(`http://localhost:5000/api/update-quiz/${quizId}`, {
+        const response = await fetch(`${BASE_URL}api/update-quiz/${quizId}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',

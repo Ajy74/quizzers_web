@@ -11,6 +11,7 @@ import riddleIcon from  '../../../assets/icon/riddle.png';
 import bannerIcon from  '../../../assets/icon/banner.png';
 import transactionIcon from  '../../../assets/icon/transaction.png';
 // import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import BASE_URL from "../server/endpoint";
 
 import axios from 'axios';
 import { CircularProgress } from "@mui/material";
@@ -46,20 +47,20 @@ const DashboardMenu = () =>{
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const totalUsersResponse = await axios.get('https://quizzers-api.onrender.com/api/userCount');
+                const totalUsersResponse = await axios.get(`${BASE_URL}api/userCount`);
                 const totalUsers = totalUsersResponse.data.totalUsers;
                                 
-                const activeUsersResponse = await axios.get('https://quizzers-api.onrender.com/api/activeUserCount');
+                const activeUsersResponse = await axios.get(`${BASE_URL}api/activeUserCount`);
                 const activeUsers = activeUsersResponse.data.activeUsers;
 
-                const quizResponse = await axios.get('https://quizzers-api.onrender.com/api/quizCounts');
+                const quizResponse = await axios.get(`${BASE_URL}api/quizCounts`);
                 const liveQuizCount = quizResponse.data.liveCount;
                 const upcomingQuizCount = quizResponse.data.upcomingCount;
 
-                const contestResponse = await axios.get('https://quizzers-api.onrender.com/api/liveContestCount');
+                const contestResponse = await axios.get(`${BASE_URL}api/liveContestCount`);
                 const liveContestCount = contestResponse.data.liveContestCount;
 
-                const todayTransactionResponse = await axios.get('https://quizzers-api.onrender.com/api/totalTransactionToday');
+                const todayTransactionResponse = await axios.get(`${BASE_URL}api/totalTransactionToday`);
                 const todaysTransaction = todayTransactionResponse.data.totalAmount;
                 
                 

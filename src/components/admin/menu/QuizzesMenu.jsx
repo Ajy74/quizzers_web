@@ -6,6 +6,7 @@ import AddQuizDialog from "../components/addQuizDialog";
 import UpdateQuizDialog from "../components/updateQuizDialog";
 
 import "../../../css/admin/menu/quizMenu.css";
+import BASE_URL from "../server/endpoint";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -47,7 +48,7 @@ const QuizMenu = () => {
 
     const fetchQuizData = async () => {
         try {
-            const response = await fetch("https://quizzers-api.onrender.com/api/all-quiz");
+            const response = await fetch(`${BASE_URL}api/all-quiz`);
             const data = await response.json();
             setQuizData(data);
         } catch (error) {
@@ -87,7 +88,7 @@ const QuizMenu = () => {
         setDeleting(true); 
         console.log("deleting..",quizId);
         try {
-            const response = await fetch(`http://192.168.143.122:5000/api/delete-quiz/${quizId}`, {
+            const response = await fetch(`${BASE_URL}api/delete-quiz/${quizId}`, {
                 method: "DELETE"
             });
             if (response.ok) {
