@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.25d0980d.css",
+    "main.js": "/static/js/main.dd61f2fa.js",
+    "static/media/ajay.jpg": "/static/media/ajay.793f161d0a4d47d62f98.jpg",
+    "static/media/splash_logo.png": "/static/media/splash_logo.9504aac03d922fe6f16a.png",
+    "static/media/riddle.png": "/static/media/riddle.80b799236f188807aff8.png",
+    "static/media/upcoming_quiz.png": "/static/media/upcoming_quiz.18ab286be3fb10ce444e.png",
+    "static/media/banner.png": "/static/media/banner.3fb7801e8a231f1e24fa.png",
+    "static/media/idea.png": "/static/media/idea.5550d5ceb8cde03fb26d.png",
+    "static/media/team.png": "/static/media/team.551e43d797117d5c8b2c.png",
+    "static/media/transaction.png": "/static/media/transaction.4bd476cbdeaf661a4caf.png",
+    "static/media/active_user.png": "/static/media/active_user.1beffb72604b5b1b9953.png",
+    "static/media/live_quiz.png": "/static/media/live_quiz.a5c6789fcd65acf31143.png",
+    "static/media/current_affair.png": "/static/media/current_affair.8244ed897169b13188ee.png",
+    "static/media/quiz.png": "/static/media/quiz.790c48ab16f29ac7beb2.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.25d0980d.css.map": "/static/css/main.25d0980d.css.map",
+    "main.dd61f2fa.js.map": "/static/js/main.dd61f2fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25d0980d.css",
+    "static/js/main.dd61f2fa.js"
+  ]
+}
