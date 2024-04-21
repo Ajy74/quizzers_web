@@ -7,10 +7,14 @@ import '../css/carausel.css';
 
 const Carousel = () => {
     const images = [
-      "https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1572196459043-5c39f99a7555?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://quizzers.s3.ap-south-1.amazonaws.com/banner1.png",
+      "https://quizzers.s3.ap-south-1.amazonaws.com/banner2.png",
     ];
+    // const images = [
+    //   "https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "https://images.unsplash.com/photo-1572196459043-5c39f99a7555?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   "https://images.unsplash.com/photo-1533422902779-aff35862e462?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    // ];
   
     const settings = {
       dots: true,
