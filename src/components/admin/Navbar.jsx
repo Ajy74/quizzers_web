@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import profileImage from '../../assets/team/ajay.jpg'; 
-// import notificationIcon from '../../assets/icon/notif.png'; 
 import '../../css/admin/navbar.css';
 
 const NavBar = () => {
-    
+    const handleLogout = () => {
+        // Clear the admin token from localStorage
+        localStorage.removeItem('adminToken');
+        // Refresh the page
+        window.location.reload();
+    };
+
     return (
         <nav className="navbar">
             <div className="logo-container">
@@ -12,7 +17,7 @@ const NavBar = () => {
             </div>
             <div className="user-profile">
                 <img src={profileImage} alt="Profile" className="profile-image" />
-                {/* <img src={notificationIcon} alt="Notifications" className="notification-icon" /> */}
+                <span className="logout-text" onClick={handleLogout}>Logout</span>
             </div>
         </nav>
     );

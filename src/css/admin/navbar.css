@@ -34,6 +34,12 @@
     transition: transform 0.3s ease;
 }
 
+.logout-text{
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+}
+
 .notification-icon {
     width: 30px;
     height: 30px;
